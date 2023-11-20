@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'menu_app/style.css' %}">
+</head>
+<body>
+    {% load menu_tags %}
+    {% with current_path=request.path %}
+        {% draw_menu 'main_menu' current_path %}
+    {% endwith %}
+</body>
+</html>
